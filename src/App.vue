@@ -9,7 +9,7 @@
 					<div v-for="index in 10" :key="index">
 						<div class="row">
 							<div v-for="index in 10" :key="index">
-								<PixelBlock v-on:click="color='currentColor'"  />
+								<PixelBlock v-bind:color="currentColor" @click="" :style="{backgroundColor: currentColor}"  />
 							</div>
 						</div>	
 					</div>

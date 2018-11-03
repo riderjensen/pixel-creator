@@ -1,18 +1,12 @@
 <template>
   <div>
-    {{ newColor }}
   </div>
 </template>
 
 <script>
 export default {
 	name: 'PixelBlock',
-	props: ['color'],
-	data: function () {
-		return {
-			newColor: this.color
-		}
-	}
+	props: ['color']
 }
 </script>
 
