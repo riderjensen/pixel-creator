@@ -3,7 +3,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<div class="container-fluid">
 	<div class="row">
-		<div class="col-sm-9">
+		<div class="col-sm-10">
 			<div class="row">
 				<div class="col-sm-12">
 					<div v-for="index in 10" :key="index">
@@ -16,7 +16,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-2">
 			<div class="row">
 				<div class="col-sm-12">
 					<Sidebar v-on:color="addColor" />
