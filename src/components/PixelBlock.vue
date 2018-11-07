@@ -1,12 +1,22 @@
 <template>
-  <div>
+  <div @click="addColor" :style="{backgroundColor: currentColor}" id="ourID">
   </div>
 </template>
 
 <script>
 export default {
 	name: 'PixelBlock',
-	props: ['color']
+	props: ['color'],
+	data: () => {
+    return {
+		currentColor: ''
+    };
+  },
+	methods: {
+		addColor() {
+			this.currentColor = this.color;
+		}
+	}
 }
 </script>
 
