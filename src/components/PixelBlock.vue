@@ -1,5 +1,5 @@
 <template>
-  <div @click="addColor" :style="{backgroundColor: currentColor}" id="ourID">
+  <div @click="addColor" :style="{backgroundColor: currentColor}">
   </div>
 </template>
 

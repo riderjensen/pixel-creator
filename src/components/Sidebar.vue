@@ -38,6 +38,9 @@ export default {
 		},
 		setColor(incColor){
 			this.ourColor = incColor;
+		},
+		foo(){
+			console.log('testing')
 		}
 	}
 }
