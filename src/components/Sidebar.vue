@@ -29,18 +29,20 @@ export default {
 	data: () => {
 		return {
 			ourColor: '',
-			commonColorsArray: ['red', 'green', 'blue', 'yellow']
+			commonColorsArray: ['black','white','gray','red', 'green', 'blue', 'yellow', 'tan', 'rebeccapurple']
+		}
+	},
+	watch: {
+		ourColor: function () {
+			this.$emit('color', this.ourColor);
 		}
 	},
 	methods: {
 		pushColor(color) {
 			this.commonColorsArray.push(color);
 		},
-		setColor(incColor){
+		setColor(incColor) {
 			this.ourColor = incColor;
-		},
-		foo(){
-			console.log('testing')
 		}
 	}
 }
@@ -55,5 +57,9 @@ span.colorShow{
 	display: inline-block;
 	height: 15px;
 	width: 15px;
+}
+.flexRow{
+	display: flex;
+	flex-wrap: wrap;
 }
 </style>
