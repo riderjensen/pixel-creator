@@ -6,6 +6,7 @@
 		<br />
 	</div>
 	<button class="btn btn-primary" @click="pushColor(ourColor)">Add Color</button>
+	<button class="btn btn-danger" @click="deleteColor(ourColor)">Delete Color</button>
 	<p>Our Color: <span class="colorShow" :style="{backgroundColor: ourColor}"></span></p>
 	<br />
 	<p>Common colors used</p>
@@ -42,6 +43,12 @@ export default {
 		pushColor(color) {
 			if(!this.commonColorsArray.includes(color)){
 				this.commonColorsArray.push(color);
+			}
+		},
+		deleteColor(color) {
+			if(this.commonColorsArray.includes(color)){
+				let index = this.commonColorsArray.indexOf(color);
+				this.commonColorsArray.splice(index, 1);
 			}
 		},
 		setColor(incColor) {
