@@ -40,7 +40,9 @@ export default {
 	},
 	methods: {
 		pushColor(color) {
-			this.commonColorsArray.push(color);
+			if(!this.commonColorsArray.includes(color)){
+				this.commonColorsArray.push(color);
+			}
 		},
 		setColor(incColor) {
 			this.ourColor = incColor;
