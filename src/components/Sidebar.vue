@@ -1,6 +1,18 @@
 <template>
   <div class="side">
-	  <button class="btn btn-primary" @click="exportImg">Export</button>
+	  <div class="input-group mb-3">
+		  <p>Click a button or enter a number</p>
+		<button class="btn btn-primary" @click="$emit('pixelNum', 10)">10</button>
+		<button class="btn btn-primary" @click="$emit('pixelNum', 20)">20</button>
+		<button class="btn btn-primary" @click="$emit('pixelNum', 25)">25</button>
+		<button class="btn btn-primary" @click="$emit('pixelNum', 30)">30</button>
+		<button class="btn btn-primary" @click="$emit('pixelNum', 50)">50</button>
+		<br />
+
+		<input type="num" class="form-control" placeholder="Number" v-model="ourPixelNumbers" v-on:keyup="$emit('pixelNum', ourPixelNumbers)" />
+		<br />
+	</div>
+		<button class="btn btn-primary" @click="exportImg">Export</button>
 	<div class="input-group mb-3">
 		<input type="text" class="form-control" placeholder="CSS Color, Hex, or RGB" v-model="ourColor" v-on:keyup="$emit('color', ourColor)" />
 		<br />
@@ -31,7 +43,8 @@ export default {
 	data: () => {
 		return {
 			ourColor: '',
-			commonColorsArray: ['black','white','gray','red', 'green', 'blue', 'yellow', 'tan', 'rebeccapurple']
+			commonColorsArray: ['black','white','gray','red', 'green', 'blue', 'yellow', 'tan', 'rebeccapurple'],
+			ourPixelNumbers: 10
 		}
 	},
 	watch: {
@@ -64,7 +77,6 @@ export default {
 			const tempImg = document.createElement('img')
 			tempImg.addEventListener('load', onTempImageLoad)
 			let ourTest = document.getElementById("myTestHere").outerHTML;
-			console.log(ourTest);
 			tempImg.src = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><foreignObject width="100%" height="100%"><div xmlns="http://www.w3.org/1999/xhtml">'+ourTest+'</div></foreignObject></svg>')
 
 			const targetImg = document.createElement('img')

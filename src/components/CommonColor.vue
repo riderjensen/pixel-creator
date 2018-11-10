@@ -12,8 +12,8 @@ export default {
 
 <style scoped>
 div{
-	height: 4vh;
-	width: 4vh;
+	height: 20px;
+	width: 20px;
 	background-color: #fff;
 	
 }

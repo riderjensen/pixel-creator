@@ -6,10 +6,10 @@
 		<div class="col-sm-10">
 			<div class="row">
 				<div class="col-sm-12" id="myTestHere">
-					<div v-for="index in 10" :key="index">
+					<div v-for="index in squareGrid" :key="index">
 						<div class="row">
-							<div v-for="index in 10" :key="index">
-								<PixelBlock v-bind:color="currentColor"  />
+							<div v-for="index in squareGrid" :key="index">
+								<PixelBlock v-bind:color="currentColor"></PixelBlock>
 							</div>
 						</div>	
 					</div>
@@ -19,7 +19,7 @@
 		<div class="col-sm-2">
 			<div class="row">
 				<div class="col-sm-12">
-					<Sidebar v-on:color="addColor" />
+					<Sidebar v-on:color="addColor" v-on:pixelNum="changePixel" />
 				</div>
 			</div>
 		</div>
@@ -40,15 +40,18 @@ export default {
   },
     data: () => {
     return {
-		squareGrid: 10,
-		currentColor: ''
+		squareGrid: 25,
+		currentColor: '',
     };
   },
   methods: {
 		addColor: function(color){
 			this.currentColor = color;
+		},
+		changePixel: function(num){
+			this.squareGrid = parseInt(num);
 		}
-  }
+	}
 }
 </script>
 
