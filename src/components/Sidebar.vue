@@ -6,7 +6,7 @@
 		<button class="btn btn-primary" @click="$emit('pixelNum', 20)">20</button>
 		<button class="btn btn-primary" @click="$emit('pixelNum', 25)">25</button>
 		<button class="btn btn-primary" @click="$emit('pixelNum', 30)">30</button>
-		<button class="btn btn-primary" @click="$emit('pixelNum', 50)">50</button>
+		<button class="btn btn-primary" @click="$emit('pixelNum', 40)">40</button>
 		<br />
 
 		<input type="num" class="form-control" placeholder="Number" v-model="ourPixelNumbers" v-on:keyup="$emit('pixelNum', ourPixelNumbers)" />
